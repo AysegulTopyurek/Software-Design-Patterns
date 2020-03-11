@@ -1,1 +1,83 @@
 # ytkproje1
+
+
+= https://asciidoctor.org/docs/asciidoc-syntax-quick-reference/#images["Asciidoc^",role=teal] Nedir
+
+AsciiDoc, insan tarafından okunabilen, DocBook XML ile semantik olarak eşdeğer olan, ancak düz metin işaretleme kuralları kullanan bir belge biçimidir.
+link:++https://en.wikipedia.org/wiki/AsciiDoc++[More Information about asciidoc]
+[NOTE]
+====
+Oluşturulan örnekler, HTML arka ucunun ürettiği çıktıya odaklanır. AsciiDoc, PDF, EPUB ve DocBook oluştururken tamamlayıcı çıktılar üretir.
+====
+[CAUTION]
+====
+Kullanılan başlıklar isteğe bağlıdır
+====
+
+== AsciidocFX Nedir
+
+
+Açık kaynaklı projeler topluluğuna giren AsciidocFx, kullanıcılarına en kolay ve en kullanışlı olacak şekilde AsciiDoc dokümanları yazmalarına yardımcı olmaktadır
+[IMPORTANT]
+====
+ AsciiDoc bir dosya formatıdır
+====
+http://asciidocfx.org - AsciidocFX
+
+. Linux, serbestçe dağıtılabilen, çokgörevli, çok kullanıcılı UNIX işletim sistemi türevidir. Linux, İnternet üzerinde ilgili ve meraklı birçok kişi tarafından ortak olarak geliştirilmekte olan ve başta IBM-PC uyumlu kişisel bilgisayarlar olmak üzere birçok platformda çalışabilen ve herhangi bir maliyeti olmayan bir işletim sistemidir.
+* Günümüzde Linux çekirdeğini kullanan işletim sistemleri büyük bir kitle tarafından genel olarak "Linux" adıyla anılmaktadır. Diğer yandan Özgür Yazılım Vakfı ve çeşitli özgür yazılım toplulukları, bir işletim sistemi olarak Linux'dan bahsederken, GNU araç ve yazılımlarını barındırıyor olması nedeniyle "GNU/Linux" tanımını kullanmaktadır.
+
+[%header,cols=2*] 
+|===
+|LİNUX
+|WİNDOWS
+
+|Kontrol      işletim      sisteminin
+elindedir.
+|Kullanıcı        yönetimli        bir
+sistemdir.
+
+|Microsoft tarafından sağlanır ya da donanım üreticileri sağlar. Her donanımın Wündows sürücüsü mutlaka vardır.
+|Donanım üreticileri tarafından sağlanan sürücü sayısı azdır. NVIDIA, ATI, HP gibi bazı firmalar açık kaynak kodlu sürücü                        üretmektedirler. Diğerlerinin Linux’ta çalışması tersine mühendislik yöntemiyle
+sağlanır.
+|===
+
+image::asciidcfx.jpg[]
+
+image:bbb.jpg[Asci,225,225,role="right"] 
+
+Click image:icons/bbb.jpg[Play, title="Play"] to get the party started.
+
+Click image:icons/bbb.jpg[title="Pause"] when you need a break.
+
+video::video_file.mp4[]
+
+video::video_file.mp4[width=640, start=60, end=140, options=autoplay]
+
+video::rPQoq7ThGAU[youtube]
+.app.bash
+[source,bash]
+----
+require 'sinatra'
+
+#!/bin/bash
+echo “Merhaba Dunya!” 
+end
+----
+.app.cc
+[source,c++]
+----
+#include "tricks.h"
+using namespace std;
+
+int alpha(int &p, Framework &f) {
+    the->setcolor("red");
+    float x1= ( f.p2x(p+1) ) - ( f.dC() / 2 );
+    switch ( p % 4 ) { // Just some random code.
+       case 0:
+           the->line(x1, yb, x2, y0);
+           break;
+       case 1:
+           the->line(x1, y0, x2, yb);
+           break;
+    } // end of switch block
