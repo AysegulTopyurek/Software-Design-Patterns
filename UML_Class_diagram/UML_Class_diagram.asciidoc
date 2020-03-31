@@ -23,8 +23,10 @@ class KB_Protocol {
 class Protocol 
     
 together {
+
   class Adress
   class PhoneNumber
+  
 }
 
 
@@ -51,11 +53,11 @@ class ScriptTree{
 
 class ScriptTreeNode{
 	script
-	paras
+	
 	
 	add_child(node)
 	del_child(node)
-	specific_than(node)
+
 }
 
 class Script {
