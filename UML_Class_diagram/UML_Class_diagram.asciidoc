@@ -60,7 +60,9 @@ class ScriptTreeNode{
 
 }
 
-class Script {
+class Label {
+    test_id
+	context_manager
 	name
 	module
 	run()
@@ -102,7 +104,15 @@ class Context{
 	get_field()
 }
 class Switch{
-	switch_type
+	type
+	indexes {value tuple : index}
+	fields {name : value}
+	
+	set_field()
+	get_field()
+}
+class Case{
+	type
 	indexes {value tuple : index}
 	fields {name : value}
 	
@@ -120,28 +130,22 @@ class Position{
 }
 
 
-Communication o- Controller: process_query()
 Communication -o Controller: send()
 Controller *-- KB_ProtocolFactory
-Controller *-- ScriptManager
+
 KB_ProtocolFactory --> KB_Protocol: create
 KB_ProtocolFactory o- ScriptManager
 KB_Protocol o-up- ScriptManager
-KB_Protocol *-- ContextManager
-KB_Protocol -> Script: run()
+KB_Protocol o-- ContextManager
 ScriptManager *- ScriptTree
 ScriptTree *- ScriptTreeNode
-ScriptTreeNode *-- Script
-ContextManager *-left- IndexList
+ContextManager o-left- IndexList
 ContextManager *-- Context
-ContextManager *-- Index
-IndexList o-- Index
-Index o- Context: find
-Context o-left- Index: update
+IndexList *-- Index
 Context <|.. Switch
-Context <|-- Position
-Script <|-- Position
-KB_Protocol -- "*" Protocol: owns
+Context <|.. Position
+Switch  <|-- Case
+KB_Protocol "*"-- "*" Label: owns
 Protocol <|-- PhoneNumber
 Adress -- (Protocol, PhoneNumber)
 
