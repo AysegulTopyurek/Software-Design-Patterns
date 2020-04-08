@@ -1,0 +1,60 @@
+[source,java]
+----
+public abstract class Computer { <1>
+	
+	public abstract String getRAM(); <2>
+	public abstract String getPROCESSOR();
+	public abstract String getCPU();
+----
+<1> Öncelikle bir Computer sınıfı oluşturuldu.
+<2> Computer sınıfı için gerekli özellikler olan ram,processor ve cpu  get edildi.
+
+[source,java]
+----
+public class Asus extends Computer { <1>
+
+	private String ramSize; <2>
+	private String processor;
+	private String cpu;
+----
+<1> Computer sınıfından Asus özelliği kalıtıldı
+<2> ramSize,processor ve cpu özellikleriin factory pattern olması için gerekli özellik olan private metosundan yararlanıldı
+
+[source,java]
+----
+public class ComputerFactory { <1>
+	public static Computer getComputer(String type, String ramSize, String processor, String cpu){ <2>
+		if("Asus".equalsIgnoreCase(type)) <3>
+		return new Asus(ramSize, processor, cpu);
+		else if("Dell".equalsIgnoreCase(type)) return new Dell(ramSize, processor, cpu);
+		
+		return null;
+	}
+----
+<1> Bir Computer fabrikası oluşturuldu
+<2> Giriş parametresine bağlı olarak farklı alt sınıfların oluşturuldu.getComputer fabrika yöntemidir. 
+
+<3> Bu fabrikadaki ürünün yani Asus ve Dell için tip uyumu var mı diye bakıldı
+[source,java]
+----
+public class Debug { <1>
+public static void main(String[] args) {
+	
+	Computer asus = ComputerFactory.getComputer("asus","2 GB","500 GB","2.4 GHz"); <2>
+	Computer dell = ComputerFactory.getComputer("dell","16 GB","1 TB","2.9 GHz");
+	System.out.println("Factory Asus::"+asus); <3>
+	System.out.println("Factory Dell::"+dell);
+}
+}
+----
+<1> Yapılan işlemler için basit bir Debug etme sınıfı oluşturuldu.
+<2> Computer özelliklerine rastgele değerler verildi.
+
+<3> Bu değerler ekrana yazdırıldı örnek: Asus için.
+
+
+[source,console]
+----
+Factory Asus::RAM= 2 GB, PROCESSOR=500 GB, CPU=2.4 GHz
+Factory Dell::RAM= 16 GB, PROCESSOR=1 TB, CPU=2.9 GHz
+----

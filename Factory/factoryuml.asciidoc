@@ -1,0 +1,39 @@
+[uml]
+----
+@startuml
+class ComputerFactory <<Java Class>> {
+ 
+}
+class Computer <<Java Class>> {
+ 
+}
+class Asus <<Java Class>> {
+ 
+}
+class Dell <<Java Class>> {
+ 
+}
+
+class ComputerFactory {
+
+--
+datamodel
+}
+
+class Computer{
+	--
+datamodel
+}
+class Asus{
+	--
+datamodel
+}
+class Dell{
+	--
+datamodel
+}
+Computer <|-- Asus
+Computer <|-- Dell
+
+
+
