@@ -1,0 +1,13 @@
+/**
+ * 
+ */
+/**
+ * @author user
+ *
+ */
+module prototypePattern {
+	
+	
+}
+
+

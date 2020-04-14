@@ -1,0 +1,27 @@
+[uml]
+----
+@startuml
+
+
+class Doktor_sirasi {
+available[]
+--
+inUse[]
+--
+getDoctor()
+DoctorNotFoundException()
+--
+release()
+
+}
+
+class Doktor{
+	--
+}
+class Hastalar{
+	--
+takeAdoctor()
+}
+
+Doktor_sirasi <|-- Doktor
+Doktor_sirasi <|--Hastalar
