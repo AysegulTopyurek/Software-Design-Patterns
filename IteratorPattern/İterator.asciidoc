@@ -1,0 +1,66 @@
+[uml]
+----
+@startuml
+
+package iteratorpatternexample { 
+
+interface AlbumIterator {
++hasnext()
++Album next()
+}
+
+interface AlbumCollection {
+	+addAlbum()
+	+removeAlbum()
+
++AlbumIterator iterator(Albums type)
+}
+
+class Album {
+	-String singerName
+	-AlbumsType TYPE
+	+Album()
+	+getSingerName()
+	+getType()
+	
+}
+
+enum AlbumsType {
+TOP100TURKEY
+TODAYHITS
+TOP100AMERICA
+MİX
+}
+
+class AlbumList{
+   - List albumlist
+   +AlbumList()
+   +addAlbum()
+   +removeAlbum()
+   +AlbumIterator iterator()
+   note : return new AlbumIteratorList(type ,this.albumslist)
+   
+}
+
+
+-class AlbumIteratorList{
+ -AlbumsType type
+ -List albums
+ -int position
+ +AlbumIteratorList()
+ +hasnext()
+ +Album next()
+   
+}
+AlbumIteratorList ..|> AlbumIterator 
+AlbumList ..|> AlbumCollection
+
+AlbumList ..>AlbumIteratorList :create
+AlbumIteratorList --> AlbumList
+Album --> AlbumIterator
+Album --> AlbumCollection
+
+
+
+
+@enduml

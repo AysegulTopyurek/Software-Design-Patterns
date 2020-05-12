@@ -1,0 +1,56 @@
+[uml]
+----
+@startuml
+
+package observerpatternexample { 
+
+interface Observer {
++update()
+
+}
+
+interface Subject {
+	+addObserver(Observer o)
+	+removeObserver(Observer o)
+	+notifyUpdate(NewCollection m)
+
+
+}
+
+class NewCollection {
+	+collectionContent
+	+NewCollection(String m)
+	+getCollectionContent()
+
+	
+}
+class CEO{
+   - List observers
+   +addObserver(Observer o)
+   +removeObserver(Observer o)
+   +notifyUpdate(NewCollection m)
+}
+
+
+class Customer1{
++update(NewCollection m)
+   
+}
+class Customer2{
++update(NewCollection m)
+   
+}
+class Customer3{
++update(NewCollection m)
+   
+}
+Subject o-- Observer
+Observer <|-- Customer1
+Observer <|-- Customer2
+Observer <|-- Customer3
+Subject <|-- CEO
+
+
+
+
+@enduml
